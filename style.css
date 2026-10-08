@@ -1,0 +1,782 @@
+/* ================= BASIC ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #faf9f5;
+    color: #202b35;
+}
+
+
+/* ================= NAVBAR ================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(250, 249, 245, 0.85);
+    backdrop-filter: blur(15px);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #387777;
+    font-family: "Playfair Display", serif;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #263238;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: #387777;
+}
+
+.nav-button,
+.main-button,
+.second-button,
+.footer-contact-button {
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 12px 22px;
+}
+
+.nav-button {
+    background: #387777;
+    color: white;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 90vh;
+    max-width: 1200px;
+    margin: auto;
+    padding: 80px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.small-title,
+.section-small {
+    color: #387777;
+    letter-spacing: 2px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(50px, 7vw, 90px);
+    line-height: 1;
+    margin: 20px 0;
+}
+
+.hero h1 span,
+.section-title span,
+.contact-section h2 span,
+.creative-section h2 span,
+.highlight-section h2 span {
+    color: #387777;
+}
+
+.hero-description {
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 520px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.main-button {
+    background: #387777;
+    color: white;
+}
+
+.second-button {
+    border: 1px solid #387777;
+    color: #387777;
+}
+
+
+/* ================= 3D IMAGE ================= */
+
+.hero-image {
+    position: relative;
+    width: 420px;
+    height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    perspective: 1000px;
+}
+
+.hero-image img {
+    width: 330px;
+    height: 430px;
+    object-fit: cover;
+    object-position: top;
+
+    border-radius: 170px 170px 30px 30px;
+
+    position: relative;
+    z-index: 2;
+
+    box-shadow: 0 30px 70px rgba(56, 119, 119, 0.25);
+
+    transition: 0.5s;
+}
+
+.hero-image img:hover {
+    transform: rotateY(8deg) rotateX(5deg) scale(1.03);
+}
+
+.circle-bg {
+    position: absolute;
+    width: 380px;
+    height: 380px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #d9eeee,
+        #f4eeee,
+        #d9eeee
+    );
+
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.floating-card {
+    position: absolute;
+    z-index: 5;
+
+    padding: 12px 18px;
+
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+
+    border-radius: 15px;
+
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+
+    color: #387777;
+}
+
+.card-one {
+    top: 70px;
+    left: 0;
+}
+
+.card-two {
+    right: 0;
+    top: 180px;
+}
+
+.card-three {
+    bottom: 50px;
+    left: 20px;
+}
+
+
+/* ================= SECTIONS ================= */
+
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 30px;
+}
+
+.section-title {
+    font-family: "Playfair Display", serif;
+    font-size: 50px;
+    margin: 15px 0 50px;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.about-text p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.info-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.info-card {
+    padding: 25px;
+    background: white;
+    border-radius: 20px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.07);
+
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-10px) rotateX(3deg);
+}
+
+.info-card h3 {
+    color: #387777;
+    margin-bottom: 10px;
+}
+
+
+/* ================= EDUCATION ================= */
+
+.education-section {
+    background: #eef6f5;
+    max-width: none;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.timeline {
+    border-left: 2px solid #387777;
+    padding-left: 40px;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 45px;
+}
+
+.timeline-number {
+    width: 50px;
+    height: 50px;
+    background: #387777;
+    color: white;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: -66px;
+}
+
+.timeline-item h3 {
+    font-size: 24px;
+}
+
+.timeline-item p {
+    margin: 8px 0;
+}
+
+.timeline-item span {
+    color: #387777;
+}
+
+
+/* ================= SKILLS ================= */
+
+.skills-container,
+.projects-container,
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.skill-card,
+.project-card,
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+
+    transition: 0.4s;
+}
+
+.skill-card:hover,
+.project-card:hover,
+.service-card:hover {
+    transform: translateY(-12px) rotateX(3deg);
+    box-shadow: 0 25px 50px rgba(56,119,119,0.15);
+}
+
+.skill-card i {
+    font-size: 35px;
+    color: #387777;
+    margin-bottom: 20px;
+}
+
+.skill-card h3,
+.project-card h3,
+.service-card h3 {
+    margin-bottom: 12px;
+}
+
+.skill-card p,
+.project-card p,
+.service-card p {
+    line-height: 1.6;
+}
+
+
+/* ================= PROJECTS ================= */
+
+.projects-section {
+    background: #f1eeee;
+    max-width: none;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.project-icon {
+    font-size: 40px;
+    color: #387777;
+    margin-bottom: 20px;
+}
+
+.technology {
+    color: #387777;
+    font-weight: bold;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #387777;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* ================= EXPERIENCE ================= */
+
+.experience-box {
+    display: flex;
+    gap: 25px;
+
+    padding: 35px;
+
+    background: white;
+    border-radius: 25px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.07);
+}
+
+.experience-icon {
+    font-size: 45px;
+    color: #387777;
+}
+
+.experience-box h4 {
+    color: #387777;
+    margin: 8px 0;
+}
+
+.experience-box p {
+    line-height: 1.7;
+}
+
+.learning-box {
+    margin-top: 30px;
+}
+
+.learning-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.learning-list span {
+    padding: 10px 18px;
+    background: #e0eeee;
+    color: #387777;
+    border-radius: 30px;
+}
+
+
+/* ================= CREATIVE ================= */
+
+.creative-section {
+    text-align: center;
+    padding: 100px 30px;
+    background: #e8f3f2;
+}
+
+.creative-section h2,
+.highlight-section h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 50px;
+    margin: 15px 0 40px;
+}
+
+.creative-grid {
+    max-width: 900px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.creative-grid div {
+    background: white;
+    padding: 35px;
+    border-radius: 25px;
+
+    font-size: 18px;
+
+    transition: 0.4s;
+}
+
+.creative-grid div:hover {
+    transform: rotate(-4deg) translateY(-10px);
+}
+
+
+/* ================= PROCESS ================= */
+
+.process-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.process-card {
+    padding: 30px;
+    border-top: 3px solid #387777;
+}
+
+.process-card strong {
+    color: #387777;
+    font-size: 25px;
+}
+
+
+/* ================= HIGHLIGHTS ================= */
+
+.highlight-section {
+    padding: 100px 30px;
+    text-align: center;
+    background: #f3eeee;
+}
+
+.quote-container {
+    max-width: 1000px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.quote-card {
+    background: white;
+    padding: 35px;
+    border-radius: 25px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact-section {
+    background: #244f50;
+    color: white;
+    padding: 100px 30px;
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.contact-section .section-small {
+    color: #c9eeee;
+}
+
+.contact-section h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 55px;
+    margin: 20px 0;
+}
+
+.contact-section h2 span {
+    color: #d8eeee;
+}
+
+.contact-content > p {
+    line-height: 1.7;
+}
+
+form {
+    margin-top: 40px;
+
+    display: grid;
+    gap: 15px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 16px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 12px;
+
+    font-family: inherit;
+}
+
+form button {
+    padding: 16px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: #d8eeee;
+    color: #244f50;
+
+    font-weight: bold;
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+form button:hover {
+    transform: translateY(-3px);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #182f30;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.footer-logo {
+    font-family: "Playfair Display", serif;
+    font-size: 35px;
+    color: #d8eeee;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.social-links a {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: white;
+    background: #387777;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    transform: translateY(-6px) rotate(5deg);
+    background: #d8eeee;
+    color: #244f50;
+}
+
+.footer-contact-button {
+    display: inline-block;
+
+    background: #d8eeee;
+    color: #244f50;
+
+    font-weight: bold;
+
+    margin-bottom: 25px;
+}
+
+.copyright {
+    color: #b8cccc;
+    font-size: 14px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-description {
+        margin: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-container,
+    .projects-container,
+    .services-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .process-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .quote-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 15px;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 50px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 430px;
+    }
+
+    .hero-image img {
+        width: 280px;
+        height: 370px;
+    }
+
+    .circle-bg {
+        width: 320px;
+        height: 320px;
+    }
+
+    .section-title {
+        font-size: 40px;
+    }
+
+    .info-cards,
+    .skills-container,
+    .projects-container,
+    .services-container,
+    .creative-grid,
+    .process-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .main-button,
+    .second-button {
+        display: block;
+    }
+
+    .contact-section h2 {
+        font-size: 40px;
+    }
+
+}
